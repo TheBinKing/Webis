@@ -1,0 +1,808 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+			<meta name="robots" content="noodp,noydir">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>A Quick Tutorial on JavaScript Bookmarklets</title>
+<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="//stats.wp.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Matt Cutts: Gadgets, Google, and SEO » Feed" href="https://www.mattcutts.com/blog/feed/">
+<link rel="alternate" type="application/rss+xml" title="Matt Cutts: Gadgets, Google, and SEO » Comments Feed" href="https://www.mattcutts.com/blog/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Matt Cutts: Gadgets, Google, and SEO » A Quick Tutorial on JavaScript Bookmarklets Comments Feed" href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/feed/">
+<link rel="canonical" href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.mattcutts.com\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.5"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<link rel="stylesheet" id="eleven40-css" href="https://www.mattcutts.com/blog/wp-content/themes/mattcutts3/style.css?ver=1.0" type="text/css" media="all">
+<style id="wp-emoji-styles-inline-css" type="text/css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel="stylesheet" id="wp-block-library-css" href="https://www.mattcutts.com/blog/wp-includes/css/dist/block-library/style.min.css?ver=6.4.5" type="text/css" media="all">
+<link rel="stylesheet" id="mediaelement-css" href="https://www.mattcutts.com/blog/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="https://www.mattcutts.com/blog/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4.5" type="text/css" media="all">
+<style id="jetpack-sharing-buttons-style-inline-css" type="text/css">
+.jetpack-sharing-buttons__services-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;list-style-type:none;margin:5px;padding:0}.jetpack-sharing-buttons__services-list.has-small-icon-size{font-size:12px}.jetpack-sharing-buttons__services-list.has-normal-icon-size{font-size:16px}.jetpack-sharing-buttons__services-list.has-large-icon-size{font-size:24px}.jetpack-sharing-buttons__services-list.has-huge-icon-size{font-size:36px}@media print{.jetpack-sharing-buttons__services-list{display:none!important}}.editor-styles-wrapper .wp-block-jetpack-sharing-buttons{gap:0;padding-inline-start:0}ul.jetpack-sharing-buttons__services-list.has-background{padding:1.25em 2.375em}
+</style>
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="googlefonts-css" href="https://fonts.googleapis.com/css?family=Merriweather:400&amp;subset=latin" type="text/css" media="all">
+<link rel="stylesheet" id="open-sans-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&amp;subset=latin%2Clatin-ext&amp;display=fallback&amp;ver=6.4.5" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="https://www.mattcutts.com/blog/wp-content/plugins/jetpack/css/jetpack.css?ver=13.6.1" type="text/css" media="all">
+<!--[if lt IE 9]>
+<script type="text/javascript" src="https://www.mattcutts.com/blog/wp-content/themes/genesis/lib/js/html5shiv.min.js?ver=3.7.3" id="html5shiv-js"></script>
+<![endif]-->
+<link rel="https://api.w.org/" href="https://www.mattcutts.com/blog/wp-json/"><link rel="alternate" type="application/json" href="https://www.mattcutts.com/blog/wp-json/wp/v2/posts/1002"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.mattcutts.com/blog/xmlrpc.php?rsd">
+<link rel="alternate" type="application/json+oembed" href="https://www.mattcutts.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.mattcutts.com%2Fblog%2Fjavascript-bookmarklet-basics%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.mattcutts.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.mattcutts.com%2Fblog%2Fjavascript-bookmarklet-basics%2F&amp;format=xml">
+<style type="text/css" media="screen">
+	body{ font-family:"Merriweather", arial, sans-serif;}
+</style>
+<!-- fonts delivered by Wordpress Google Fonts, a plugin by Adrian3.com -->	<style>img#wpstats{display:none}</style>
+		<link rel="icon" href="https://www.mattcutts.com/blog/wp-content/themes/mattcutts3/images/favicon.ico">
+<style type="text/css">#header { background: url(https://www.mattcutts.com/blog/wp-content/themes/mattcutts3/images/header.png) no-repeat !important; }</style>
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Quick Tutorial on JavaScript Bookmarklets">
+<meta property="og:url" content="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/">
+<meta property="og:description" content="Bookmarklets are very handy pieces of JavaScript code that you can bookmark. In HTML, if you want a link to open in a new window, you’d write it like this: <a href=” target=”_b…">
+<meta property="article:published_time" content="2008-08-05T05:25:57+00:00">
+<meta property="article:modified_time" content="2008-08-05T05:25:57+00:00">
+<meta property="og:site_name" content="Matt Cutts: Gadgets, Google, and SEO">
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg">
+<meta property="og:image:alt" content="">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:text:title" content="A Quick Tutorial on JavaScript Bookmarklets">
+<meta name="twitter:card" content="summary">
+
+<!-- End Jetpack Open Graph Tags -->
+<script src="https://www.mattcutts.com/blog/wp-includes/js/wp-emoji-release.min.js?ver=6.4.5" defer=""></script></head>
+<body class="post-template-default single single-post postid-1002 single-format-standard header-full-width content-sidebar"><div id="wrap"><div id="nav"><div class="wrap"><ul id="menu-top-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-10"><a href="http://www.mattcutts.com/blog/">Home</a></li>
+<li id="menu-item-5829" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5829"><a href="http://www.mattcutts.com/blog/about-me/">About Me</a></li>
+<li id="menu-item-5825" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5825"><a href="https://www.mattcutts.com/blog/type/googleseo/">Google/SEO</a></li>
+<li id="menu-item-5826" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5826"><a href="http://www.mattcutts.com/blog/disclaimer/">Disclaimer</a></li>
+<li id="menu-item-5827" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5827"><a href="http://www.mattcutts.com/blog/disclosure/">Disclosure</a></li>
+</ul></div></div>	<div id="wrap-inner">
+<div id="header"><div class="wrap"><div id="title-area"><p id="title"><a href="https://www.mattcutts.com/blog/">Matt Cutts: Gadgets, Google, and SEO</a></p></div></div></div><div id="inner"><div class="wrap"><div id="content-sidebar-wrap"><div id="content" class="hfeed"><div class="post-1002 post type-post status-publish format-standard hentry category-how-to category-webnet entry"><h1 class="entry-title">A Quick Tutorial on JavaScript Bookmarklets</h1>
+<div class="post-info">by <span class="author vcard"><span class="fn"><a href="https://www.mattcutts.com/blog/author/admin/" rel="author">Matt Cutts</a></span></span> on <span class="date published time" title="2008-08-04T22:25:57-07:00">August 4, 2008</span>  <span class="categories">in <a href="https://www.mattcutts.com/blog/type/how-to/" rel="category tag">How to</a>, <a href="https://www.mattcutts.com/blog/type/webnet/" rel="category tag">Web/Net</a></span>  </div><div class="entry-content"><p>Bookmarklets are very handy pieces of JavaScript code that you can bookmark. In HTML, if you want a link to open in a new window, you’d write it like this:</p>
+<p>&lt;a href=”https://www.mattcutts.com/blog/” target=”_blank”&gt;Matt Cutts&lt;/a&gt;</p>
+<p>Go on, try it on this link: <a href="https://www.mattcutts.com/blog/" target="_blank">Matt Cutts</a></p>
+<p>If you wanted to create a bookmarklet to open a new window or tab, you’d do it like this:</p>
+<p>javascript:(function(){ window.open(‘http://www.cnn.com/’); })();</p>
+<p>so the actual bookmarklet link that would appear in your HTML as</p>
+<p>&lt;a href=”javascript:(function(){ window.open(‘http://www.cnn.com/’); })();”&gt;CNN&lt;/a&gt;</p>
+<p>and if you want to play with it, here’s the trivial <a href="javascript:(function(){ window.open('http://www.cnn.com/'); })();">CNN</a> example bookmarklet. On Firefox, you can drag the bookmarklet to your bookmarks bar. On Internet Explorer, you can right-click and select “Add to Favorites…”.</p>
+<p>The reason I mention this is that <a href="http://bit.ly/go">bit.ly</a> is a url shortening service that I like, and they have a bookmarklet, but it replaces the page that you’re shortening. Their bookmarklet looks like this:</p>
+<p>javascript:location.href=’http://bit.ly/?url=’+encodeURIComponent(location.href)</p>
+<p>So suppose you find a new page that you want to twitter about or shorten the url for some reason. You want a bookmarklet that opens the bit.ly url in a new window or tab instead of replacing the current page. Combining the two bookmarkets, you’d get</p>
+<p>javascript:(function(){ window.open(‘http://bit.ly/?url=’+encodeURIComponent(location.href)); })();</p>
+<p>and here is a bookmarklet for <a href="javascript:(function(){ window.open('http://bit.ly/?url='+encodeURIComponent(location.href)); })();">bit.ly</a> that opens your bit.ly url in a new window or tab. You can just drag the bookmarklet to your bookmarks folder. </p>
+<p>That’s enough to get you started with bookmarklets, but you can <a href="http://subsimple.com/bookmarklets/default.asp">find more info about bookmarklets</a> by searching or by <a href="http://xenomachina.com/2007/03/easier-links-with-google-ajax-search.html">looking</a> <a href="http://www.micropersuasion.com/2008/06/measure-traffic.html">at</a> <a href="http://friendfeed.com/share/bookmarklet">example</a> <a href="http://googlereader.blogspot.com/2008/05/share-anything-anytime-anywhere.html">bookmarklets</a> around the <a href="http://googlesystem.blogspot.com/2007/07/useful-google-bookmarklets.html">web</a>. For example, industrial-strength bookmarklets often load JavaScript dynamically from a webserver. That way if you want to upgrade or improve the functionality of the bookmarklet, you can change the code on the webserver instead of asking every user to update their bookmark. On the other end of the spectrum, some quick-and-dirty bookmarklets don’t even bother escaping the url.</p>
+<p><strong>I want to open a new tab, not a new window!</strong></p>
+<p>Some webmasters want to choose between a link opening a new tab vs. a new window. I believe that you don’t get that choice — it’s up to the user and their web browser. For example, in Firefox a user can select their desired behavior under Tools → Options → Tabs → “New pages should be opened in:” and choose “a new tab”. Or to tweak the setting directly, the user can type “about:config” into the location bar/address bar and then modify the “browser.link.open_newwindow” option to be one of the following values:</p>
+<p>1 = open new windows in the existing window<br>
+2 = open new windows in a new window<br>
+3 = open new windows in a new tab (this is the default in Firefox 2 and Firefox 3)</p>
+<p>See this <a href="http://kb.mozillazine.org/About:config_entries">about:config</a> page for more info.</p>
+<p>Likewise in Internet Explorer, the user can go into Tools → Internet Options → “Settings” button in the Tabs section and then under “When a pop-up is encountered:” choose “Always open pop-ups in a new tab”.</p>
+</div><div class="post-meta"></div></div><div id="comments"><h3 id="comments-title"><span class="num">30</span> Responses to <em>A Quick Tutorial on JavaScript Bookmarklets</em> <span class="leavecomment">(<a href="#respond">Leave a comment</a>)</span></h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-58758">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/91464f59888f492220b50baef22872b1?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/91464f59888f492220b50baef22872b1?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" decoding="async">			<cite class="fn"><a href="http://www.promomasters.at/" class="url" rel="ugc external nofollow">Michael</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58758">August 5, 2008 at 1:09 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>Hi Matt,</p>
+<p>and now the big question … do those Bookmarklets you described also transfer Linkpopularity to the target page? Maybe you can give us a posting about Java Script Links and the Google Crawler. But I think with your example you wanted to show us which Links are value to Google.</p>
+<p>Thanks, Michael</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58759">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/9c23ba631ec1b007dc7b85508574773b?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/9c23ba631ec1b007dc7b85508574773b?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" decoding="async">			<cite class="fn">Sam Daams</cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58759">August 5, 2008 at 2:38 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>I never knew it was possible to drag jscript bookmarklets into the toolbar like that. I do it all the time for regular links, but never thought of this. That bit.ly one will be good. </p>
+<p>Interesting you want to leave the choice of opening up a tab or a window in the users hands, yet you do choose to overwrite the user by forcing the new window/tab in the bookmarklet? I used to always code links to open in a new window but got an earful about it years ago from a developer friend so have moved away from it. Same reason; don’t override your user’s choice. Now it annoys me no end when a link opens in a separate window as it takes an extra move+click to ‘fix’ (the focus has moved to a new window/tab although the user expects it in the same window or else they would have ctrl clicked). Anyway, just struck me as odd considering “I believe that you don’t get that choice — it’s up to the user and their web browser” but you’re certainly not alone in doing that!</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-58760">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/b499010f7045f0a5795fecf3e188dff2?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/b499010f7045f0a5795fecf3e188dff2?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" decoding="async">			<cite class="fn">Niklas</cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58760">August 5, 2008 at 2:47 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>Hi Matt<br>
+Nice article. One question. Will google be able to follow links such as <a href="(function(){" rel="nofollow">CNN</a>? </p>
+<p>/ Niklas</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58761">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/05b7480bb351560386477dc4f601dcfc?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/05b7480bb351560386477dc4f601dcfc?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.aerin.co.uk" class="url" rel="ugc external nofollow">Graham</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58761">August 5, 2008 at 3:34 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>Am I being dense here. I see no difference between the HTML and bookmarklet links. Both open in a new tab and I can drag both to my bookmarks (using FF).</p>
+<p>I’m also a bit miffed that the function hijacks my browser, right click no longer offers the ‘open in new tab/window’ option.</p>
+<p>But I do like the way I can use bookmarklets to change the appearance of a webpage on the hoof. If you haven’t already then read the tutorial that Matt recommends, it’s given me something to play with (instead of doing some work).</p>
+<p>Ta very much Matt.</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-58762">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/72f4ba51b784673a15a1e89d8d9f49d1?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/72f4ba51b784673a15a1e89d8d9f49d1?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.ericmartindale.com" class="url" rel="ugc external nofollow">Eric Martindale</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58762">August 5, 2008 at 11:08 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>Matt, this is one of the most important elements of <strong>good web design</strong> – nothing frustrates users (me in particular) more than hijacking the expected behavior of the most commonly used interface tools (in this case, link clickage!).</p>
+<p>Google is NOTORIOUS for disabling my ability to middle-click a link and have it open in a new tab – or it opens the <em>wrong</em> page when I middle click.  See the current beta test iGoogle for examples – middle click “Inbox” – the destination is just “#”!  Instead, middle click “Gmail”, and you get the expected behavior.</p>
+<p>Why?  Because developers often use “#” to remove any behavior on the link without JavaScript.  This is bad, in both the user’s and Google’s eyes (correct me if I’m wrong, Matt!):  instead, you should be using this technique:<br>
+<code>&lt;a href="http://www.destination.com/url" onclick="your_function(); return false;"&gt;link text</code> where the “return false;” cancels the behavior of the <strong>href</strong> element when JavaScript is available.</p>
+<p>To summarize, “#” is not an anchor reference, stop sending users there!</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58763">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/ba19ff99eda0e5dc212dded86a5e16f2?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/ba19ff99eda0e5dc212dded86a5e16f2?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.walkonmypath.com" class="url" rel="ugc external nofollow">Multi-Worded Adam</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58763">August 5, 2008 at 12:07 pm</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>I just have one minor caveat as far as this post is concerned:  target=”_blank” is an invalid attribute withing certain doctypes (XHTML 1.0 Strict, for example).  </p>
+<p><a href="http://www.456bereastreet.com/archive/200603/the_target_attribute_and_opening_new_windows/" rel="nofollow ugc">http://www.456bereastreet.com/archive/200603/the_target_attribute_and_opening_new_windows/</a></p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-58764">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e77fa6204cab1bdf87b3d22b1d54cdcd?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/e77fa6204cab1bdf87b3d22b1d54cdcd?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.ehlinelaw.com/" class="url" rel="ugc external nofollow">panzermike</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58764">August 5, 2008 at 8:13 pm</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>Thanks again Matt.  I am going to start integrating this into my <a href="http://www.ehlinelaw.com/" rel="nofollow ugc">http://www.ehlinelaw.com/</a> site.</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58765">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/ba19ff99eda0e5dc212dded86a5e16f2?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/ba19ff99eda0e5dc212dded86a5e16f2?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.walkonmypath.com" class="url" rel="ugc external nofollow">Multi-Worded Adam</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58765">August 5, 2008 at 10:51 pm</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>Hey panzermike:  if that’s you in the video on your site, has anyone ever told you that you look a little like Michael Douglas, especially his character in the movie Falling Down?</p>
+<p>For those who haven’t seen the movie, I can’t sit through movies for the most part because they’re usually ad nauseam boring predictable crap and I recommend you watch it.  The ending is somewhat predictable, but the journey to it sure isn’t.  Awesome flick.</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-58766">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e77fa6204cab1bdf87b3d22b1d54cdcd?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/e77fa6204cab1bdf87b3d22b1d54cdcd?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.ehlinelaw.com/" class="url" rel="ugc external nofollow">panzermike</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58766">August 6, 2008 at 2:48 pm</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>@ Multi Worded:</p>
+<p>Yes that is me and yes I have been told I look like the guy in American Psycho, Michael Douglas, and even Sean Spicoli Penn.</p>
+<p>I like to think I am just a good looking all American guy.  </p>
+<p>I will check out the flick though.</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58767">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/afe9f745229899990e2b90b83beeacc6?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/afe9f745229899990e2b90b83beeacc6?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://christelfer.blogspot.com/" class="url" rel="ugc external nofollow">Chris Telfer</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58767">August 6, 2008 at 2:58 pm</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>Hey Matt, nice tutorial. Just wanted to ask, as some people have already, if these links will pass “link juice” and indeed be followed, as I thought that Google still couldn’t read javascript? Secondly Matt, is this not considered some form of ‘cheating’ by Google, as it can’t read the links, so would Google see us as hiding this link from it? I hope you can clear this up for me. Thanks.</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-58768">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/fc234b7f52245a5e106ae1959e4b2265?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/fc234b7f52245a5e106ae1959e4b2265?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.billhartzer.com" class="url" rel="ugc external nofollow">Bill Hartzer</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58768">August 6, 2008 at 3:08 pm</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>Matt, I find those javascripts interesting. But I have a problem with them, just like I have a problem with ‘onclick’ events in links.</p>
+<p>The user doesn’t necessarily know what will happen and which URL they will be taken to when they click on the link.</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58769">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e40c291fc0843b315eafea1d4a94b07d?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/e40c291fc0843b315eafea1d4a94b07d?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.bleuken.com" class="url" rel="ugc external nofollow">Felixberto Baguyo Jr.</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58769">August 6, 2008 at 11:36 pm</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>This is nice. At least we can give our readers a way of making a bookmark shortcut for your website despite it will not be crawled by spiders.</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-58770">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/3eac4d824fd669f565d3fa29575018e8?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/3eac4d824fd669f565d3fa29575018e8?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn">Harith</cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58770">August 7, 2008 at 12:20 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>Matt,</p>
+<p>Tell us more about this very useful helpful great product<a href="http://google.com/insights/search/#" rel="nofollow">Google Insights for Search</a> 🙂</p>
+<p>If/when you can read Danish, here is something about Google Insights for Search published yesterday on this great  magnificent informative ethically SEOed <a href="http://www.business.dk/article/20080806/techmobil/708050033/" rel="nofollow"> Business.dk</a> Danish news site 🙂</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58771">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/48fbf044480420a9bc4b59cda6a640d5?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/48fbf044480420a9bc4b59cda6a640d5?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn">Donald Brown</cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58771">August 7, 2008 at 1:28 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>the bit.ly will help me, I never thought of that. Can google read javascript now? Can Glyphius be used in this same manner too?</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-58772">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/39208435c82064518a281e046fd10fb0?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/39208435c82064518a281e046fd10fb0?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.newhomessection.com" class="url" rel="ugc external nofollow">Jayson</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58772">August 7, 2008 at 2:36 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>Great tips Matt – I always enjoy shorter URLs but I’m always a little hesitant in using them. It’s probably just me but I’ll usually look at a URL before visiting it – found that a lot of spammers, and scammers, use them for fraudulent things…figures 🙂 leave it to those guys/gals to ruin a good thing! Oh well, there’s a reason for everything and I’m sure you’ll agree that spammers teach us all a lot – I’ve grown to appreciate them.</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58773">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/39208435c82064518a281e046fd10fb0?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/39208435c82064518a281e046fd10fb0?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.newhomessection.com" class="url" rel="ugc external nofollow">Jayson</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58773">August 7, 2008 at 2:41 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>NICE!! I just checked it out and it looks like you could use a few descriptive words in the URL – definitely a plus if you want to give users a clue before they click.</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-58774">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e3c6c33ce4725ea37d838289e540fae2?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/e3c6c33ce4725ea37d838289e540fae2?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://demodulated.com" class="url" rel="ugc external nofollow">Brian</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58774">August 8, 2008 at 7:04 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>I don’t like unnecessary javascript links because they obscure the action the user is deciding whether to take, and also because they’re not compatible with the Google Search Appliance!</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58775">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e77fa6204cab1bdf87b3d22b1d54cdcd?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/e77fa6204cab1bdf87b3d22b1d54cdcd?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.ehlinelaw.com/" class="url" rel="ugc external nofollow">panzermike</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58775">August 8, 2008 at 9:02 pm</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>@Brian: How so?</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-58776">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/c21ac50eed268be136a694041f7d5aa4?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/c21ac50eed268be136a694041f7d5aa4?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.isquaretechnologies.com" class="url" rel="ugc external nofollow">Hire Website designer India</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58776">August 11, 2008 at 5:58 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>That’s really very nice and I will implement it soon on my one site to test it.</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58777">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/7a01afa3d24d9a9e95045e6543f091d9?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/7a01afa3d24d9a9e95045e6543f091d9?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.srbworld.com" class="url" rel="ugc external nofollow">Chilli</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58777">August 13, 2008 at 2:38 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>The whole tab/window arguement always amazes me – personally I really don’t mind but in my office it’s a source oh heated debate and frustration.</p>
+<p>No, really it is!</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-58778">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/ac4c7856380807c14afccbe70e0ce071?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/ac4c7856380807c14afccbe70e0ce071?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.nickstamoulis.com" class="url" rel="ugc external nofollow">Nick Stamoulis</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58778">August 13, 2008 at 3:39 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>This is great information, I plan on testing this out for sure…thanks again!</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58779">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/b440a96207b7568712e94bdf77b50fa3?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/b440a96207b7568712e94bdf77b50fa3?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.paradisecentral.org/" class="url" rel="ugc external nofollow">Matt</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58779">August 18, 2008 at 4:47 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>I always find bookmarklets handier for most used sites then just plain bookmarking them. On firefox i just rick click on toolbar, select customize and drag the toolbar to the top. After that i just drag important urls from the url bar to my bookmarks bar. I decided it best to do that with google analytics seeing as i’m always logged into google.</p>
+<p>BTW, you might want to mention a nice firefox add-on called GMarks, it allows people to use Google bookmarks then allowing you to export them to firefox bookmarks. It’s the best replacement for Google Browser Sync so far.</p>
+<p>Anyways love how Google is doing things. I sure hope Microsoft loses out on Yahoo. Ironic Microsoft calls Google a monopoly when Microsoft owns as much of the OS market as Google does the search engine market. I think its Microsoft thrown a temper tantrum for not getting their way with Yahoo. =P</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-58780">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/5bb6b5a9a45901b10e16f000ea38e418?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/5bb6b5a9a45901b10e16f000ea38e418?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.total-seo.co.uk" class="url" rel="ugc external nofollow">Simon Chapple</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58780">August 20, 2008 at 6:43 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>Matt, can you clarify if using a Javascript code in the link will have an impact in terms of “link juice”?</p>
+<p>Also, I have always wondered if there was a best practice in terms of pages opening in another window from the same site.</p>
+<p>I appreciate it is very much something that is judged on a site by site basis, but does the Big G prefer one, the other, or does it simply not care?</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58781">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/c861e80cf977a88638bc7d81bbbc3a4e?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/c861e80cf977a88638bc7d81bbbc3a4e?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://boldendeavours.com/" class="url" rel="ugc external nofollow">Web development</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58781">September 2, 2008 at 7:58 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>Nice article, Matt. I’ve got a question similar to Simon’s. Some webmasters claim that if you place a link it is better that the site opens in the new window. Why so? Is it not to lose visitors? thank you.</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-58782">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/b3000a4baa6712f1357d295f937895c4?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/b3000a4baa6712f1357d295f937895c4?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn">Nicolas</cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58782">September 3, 2008 at 12:12 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>Hi Matt,<br>
+your functionality is great but your JavaScript is obtrusive.<br>
+Users will be frustrated if they don’t have the possibility to interpret it .<br>
+When will a Google Team Member produce a relevant client source code ?</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58783">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/61ac3ed1f0e1f9a34f4567ff646c563e?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/61ac3ed1f0e1f9a34f4567ff646c563e?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.autoambulance.net" class="url" rel="ugc external nofollow">autoambulance</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58783">November 22, 2008 at 12:33 pm</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>Althoug there are plenty of services like this, bit.ly is one of the best, I use this since 2007. Can recommend it.</p>
+<p>@Web development<br>
+There is no difference to use target=”_blank,<br>
+at least, not for search engines.</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-58784">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e3a981f2ff7d18285151ad28cd2e6358?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/e3a981f2ff7d18285151ad28cd2e6358?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.americanhomeconst.com/windows_doors.asp" class="url" rel="ugc external nofollow">Dallas Replacement Windows</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58784">February 20, 2009 at 11:19 pm</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>I love the tips Matt, but I am curious about google passing link juice. Will google give me the credit for the linking in javascript?</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58785">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/fe590ace720f064013a4ddadcafb4733?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/fe590ace720f064013a4ddadcafb4733?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn">Alex Zolot</cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58785">March 3, 2009 at 1:49 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>Matt,<br>
+Nice blog, but IMO you missed an important class of bookmarklets as this:</p>
+<p>javascript:(function(){q=document.getSelection();if(!q)q=prompt(‘Dictionary.com%20Search:’);if(q)location.href=’http://dictionary.reference.com/search?q=’+escape(q);})()</p>
+<p>that search the selected world in dictionary.</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-58786">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/a49701e7ed3c930d3efa6f4bc4271b03?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/a49701e7ed3c930d3efa6f4bc4271b03?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.linkedin.com/in/richardvanderhurst" class="url" rel="ugc external nofollow">Richard Vanderhurst</a></cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58786">May 19, 2009 at 2:07 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>Thanks matt for the wonderful post. This is very interesting.</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-58787">
+
+		<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/56a9e44173d19f0e1179aa008acd6f74?s=40&amp;d=identicon&amp;r=g" srcset="https://secure.gravatar.com/avatar/56a9e44173d19f0e1179aa008acd6f74?s=80&amp;d=identicon&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40" loading="lazy" decoding="async">			<cite class="fn">Peter</cite>
+			<span class="comment-meta commentmetadata">
+				<a href="https://www.mattcutts.com/blog/javascript-bookmarklet-basics/#comment-58787">November 21, 2010 at 12:03 am</a>
+							</span><!-- end .comment-meta -->
+     	</div><!-- end .comment-author -->
+
+		<div class="comment-content">
+			
+			<p>Thank you so much for this tutorial! It’s awesome!</p>
+		</div><!-- end .comment-content -->
+
+		<div class="reply">
+					</div>
+
+	</li><!-- #comment-## -->
+</ol></div>
+	<div class="navigation">
+		<div class="alignleft"><a href="https://www.mattcutts.com/blog/google-user-interface/" rel="prev"><span class="meta-nav">←</span> Ben Gomes on Google’s user interface</a></div>
+		<div class="alignright"><a href="https://www.mattcutts.com/blog/what-to-do-in-los-angeles/" rel="next">What to do in Los Angeles? <span class="meta-nav">→</span></a></div>
+	</div>
+
+</div><div id="sidebar" class="sidebar widget-area"><div id="text-2" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Follow me</h4>
+			<div class="textwidget">-&nbsp;<a href="http://twitter.com/mattcutts">Twitter</a><br>
+-&nbsp;<a href="https://www.youtube.com/c/mattcutts">YouTube</a><br>
+-&nbsp;<a href="https://www.instagram.com/mattcutts/">Instagram</a><br>
+-&nbsp;<a href="https://www.linkedin.com/in/mattcutts/">LinkedIn</a>
+<br>
+-&nbsp;<a href="https://www.ted.com/speakers/matt_cutts">TED</a></div>
+		</div></div>
+<div id="categories-3" class="widget widget_categories"><div class="widget-wrap"><h4 class="widget-title widgettitle">Categories</h4>
+
+			<ul>
+					<li class="cat-item cat-item-3"><a href="https://www.mattcutts.com/blog/type/30-days/">30 days</a> (40)
+</li>
+	<li class="cat-item cat-item-4"><a href="https://www.mattcutts.com/blog/type/android/">Android</a> (7)
+</li>
+	<li class="cat-item cat-item-6"><a href="https://www.mattcutts.com/blog/type/booksmagazines/">Books/Magazines</a> (29)
+</li>
+	<li class="cat-item cat-item-7"><a href="https://www.mattcutts.com/blog/type/chrome/">Chrome</a> (25)
+</li>
+	<li class="cat-item cat-item-8"><a href="https://www.mattcutts.com/blog/type/food/">Food</a> (6)
+</li>
+	<li class="cat-item cat-item-9"><a href="https://www.mattcutts.com/blog/type/fun/">Fun</a> (48)
+</li>
+	<li class="cat-item cat-item-10"><a href="https://www.mattcutts.com/blog/type/gadgetshack/">Gadgets/Hack</a> (97)
+</li>
+	<li class="cat-item cat-item-11"><a href="https://www.mattcutts.com/blog/type/games/">Games</a> (5)
+</li>
+	<li class="cat-item cat-item-12"><a href="https://www.mattcutts.com/blog/type/glossarydefinitions/">Glossary/Definitions</a> (2)
+</li>
+	<li class="cat-item cat-item-13"><a href="https://www.mattcutts.com/blog/type/googleseo/">Google/SEO</a> (554)
+</li>
+	<li class="cat-item cat-item-27"><a href="https://www.mattcutts.com/blog/type/halloween/">Halloween</a> (19)
+</li>
+	<li class="cat-item cat-item-14"><a href="https://www.mattcutts.com/blog/type/how-to/">How to</a> (60)
+</li>
+	<li class="cat-item cat-item-15"><a href="https://www.mattcutts.com/blog/type/iphone/">iPhone</a> (17)
+</li>
+	<li class="cat-item cat-item-16"><a href="https://www.mattcutts.com/blog/type/leftovers/">Leftovers</a> (5)
+</li>
+	<li class="cat-item cat-item-17"><a href="https://www.mattcutts.com/blog/type/linux/">Linux/Ubuntu</a> (28)
+</li>
+	<li class="cat-item cat-item-18"><a href="https://www.mattcutts.com/blog/type/movies/">Movies/Videos</a> (27)
+</li>
+	<li class="cat-item cat-item-19"><a href="https://www.mattcutts.com/blog/type/music/">Music</a> (6)
+</li>
+	<li class="cat-item cat-item-20"><a href="https://www.mattcutts.com/blog/type/personal/">Personal</a> (144)
+</li>
+	<li class="cat-item cat-item-21"><a href="https://www.mattcutts.com/blog/type/productivity/">Productivity</a> (32)
+</li>
+	<li class="cat-item cat-item-22"><a href="https://www.mattcutts.com/blog/type/television/">Television</a> (3)
+</li>
+	<li class="cat-item cat-item-23"><a href="https://www.mattcutts.com/blog/type/travel/">Travel</a> (30)
+</li>
+	<li class="cat-item cat-item-1"><a href="https://www.mattcutts.com/blog/type/uncategorized/">Uncategorized</a> (4)
+</li>
+	<li class="cat-item cat-item-24"><a href="https://www.mattcutts.com/blog/type/webnet/">Web/Net</a> (74)
+</li>
+	<li class="cat-item cat-item-25"><a href="https://www.mattcutts.com/blog/type/weblogblog/">Weblog/blog</a> (109)
+</li>
+			</ul>
+
+			</div></div>
+<div id="meta-3" class="widget widget_meta"><div class="widget-wrap"><h4 class="widget-title widgettitle">Meta</h4>
+
+		<ul>
+						<li><a href="https://www.mattcutts.com/blog/wp-login.php">Log in</a></li>
+			<li><a href="https://www.mattcutts.com/blog/feed/">Entries feed</a></li>
+			<li><a href="https://www.mattcutts.com/blog/comments/feed/">Comments feed</a></li>
+
+			<li><a href="https://wordpress.org/">WordPress.org</a></li>
+		</ul>
+
+		</div></div>
+</div></div></div></div><div id="footer" class="footer"><div class="wrap"><div class="gototop"><p><a href="#wrap" rel="nofollow">Return to top of page</a></p></div><div class="creds"><p>Copyright ©&nbsp;2024 · <a href="http://themeshaper.com">Matt Cutts Theme</a> on <a href="https://www.studiopress.com/">Genesis Framework</a> · <a href="https://wordpress.org/">WordPress</a> · <a href="https://www.mattcutts.com/blog/wp-login.php">Log in</a></p></div></div></div>	</div><!-- #wrap-inner -->
+</div><img alt="css.php" src="https://www.mattcutts.com/blog/wp-content/plugins/cookies-for-comments/css.php?k=3de531496ba0108e2c81ab744516ec0d&amp;o=i&amp;t=1417737763" width="1" height="1"><script type="text/javascript" src="https://stats.wp.com/e-202446.js" id="jetpack-stats-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="jetpack-stats-js-after">
+/* <![CDATA[ */
+_stq = window._stq || [];
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"51241449\",\"post\":\"1002\",\"tz\":\"-7\",\"srv\":\"www.mattcutts.com\",\"j\":\"1:13.6.1\"}") ]);
+_stq.push([ "clickTrackerInit", "51241449", "1002" ]);
+/* ]]> */
+</script><img src="https://pixel.wp.com/g.gif?v=ext&amp;blog=51241449&amp;post=1002&amp;tz=-7&amp;srv=www.mattcutts.com&amp;j=1%3A13.6.1&amp;host=www.mattcutts.com&amp;ref=&amp;fcp=0&amp;rand=0.2659063641492856" alt="" width="6" height="5" id="wpstats">
+
+
+
+
+
+</body></html>

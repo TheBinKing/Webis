@@ -1,4 +1,52 @@
+Metadata-Version: 2.4
+Name: webis
+Version: 1.0.0
+Summary: HTML内容提取工具，使用AI自动识别网页上的有价值信息
+Author-email: TheBinKing <example@example.com>
+Maintainer-email: TheBinKing <example@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/TheBinKing/Webis
+Project-URL: Bug Tracker, https://github.com/TheBinKing/Webis/issues
+Keywords: web,extraction,ai,content
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: beautifulsoup4==4.13.3
+Requires-Dist: gne==0.3.1
+Requires-Dist: joblib==1.4.2
+Requires-Dist: nltk==3.9.1
+Requires-Dist: numpy==2.2.3
+Requires-Dist: pandas==2.2.3
+Requires-Dist: requests==2.32.3
+Requires-Dist: scikit_learn==1.6.1
+Requires-Dist: tqdm==4.67.1
+Requires-Dist: trafilatura==2.0.0
+Requires-Dist: xgboost==2.1.4
+Requires-Dist: python-dotenv==1.0.1
+Requires-Dist: fastapi==0.110.0
+Requires-Dist: uvicorn==0.30.2
+Requires-Dist: pydantic==2.6.3
+Requires-Dist: python-multipart==0.0.9
+Requires-Dist: aiofiles==23.2.1
+Requires-Dist: vllm==0.4.1
+Requires-Dist: torch==2.3.1
+Requires-Dist: transformers==4.39.3
+Requires-Dist: accelerate==0.30.1
+Requires-Dist: sentencepiece==0.2.0
+Requires-Dist: typer==0.9.0
+Requires-Dist: rich==13.7.0
+Requires-Dist: pillow==10.3.0
+Requires-Dist: playwright==1.41.1
+Requires-Dist: selenium==4.18.1
 
+```markdown
 # Webis - HTML Content Extraction Tool  
 ![Python Version](https://img.shields.io/badge/Python-3.10-blue)  
 ![Build Status](https://img.shields.io/badge/Build-Passed-green)  
@@ -197,4 +245,9 @@ $PROJECT_ROOT/bin/webis extract --help
 
 ## Contributing
 Contributions are welcome! Please submit issues or pull requests on [GitHub](https://github.com/TheBinKing/Webis). For support, contact the maintainers or join the community discussion.  
+
+```plain
+
+I've fixed a few minor typos from the original translation (like "Conda" vs "Conda") and ensured consistent formatting. The content is now ready to use as an English README file.
+```
 
