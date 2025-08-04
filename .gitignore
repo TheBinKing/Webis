@@ -1,0 +1,18 @@
+*.py[cod]
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+*.zip
+test_output/
+model_data/
+## 增强后数据集不同步
+eval_html/
+eval_xg_html/
+enhanced_dataset.json
+web_noise-balance_dataset.json
+step/
+main.py
+data_process/
+

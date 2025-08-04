@@ -1,0 +1,35 @@
+{
+  "report": {
+    "status": "success",
+    "scan_time": "2024-02-20T14:30:45Z",
+    "scanned_files": 3,
+    "detected_keys": 2,
+    "encrypted_keys": 2,
+    "detailed_results": [
+      {
+        "file_path": "src/main.py",
+        "line_number": 15,
+        "original_key": "api_key=sk_1234567890abcdef",
+        "placeholder": "{{API_KEY_001}}",
+        "replacement_status": "success"
+      },
+      {
+        "file_path": "config/database.yml",
+        "line_number": 8,
+        "original_key": "password=SuperSecretPass123!",
+        "placeholder": "{{DB_PASSWORD_002}}",
+        "replacement_status": "success"
+      }
+    ],
+    "error_logs": []
+  },
+  "encryption_summary": {
+    "encryption_algorithm": "AES-256",
+    "key_storage_location": "encrypted_secrets.enc",
+    "key_rotation_policy": "manual"
+  },
+  "compliance_check": {
+    "owasp_v3合规性": "符合",
+    "sensitive_data_leakage_risk": "low"
+  }
+}
