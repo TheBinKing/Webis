@@ -1,4 +1,3 @@
-```markdown
 # Webis - HTML Content Extraction Tool  
 ![Python Version](https://img.shields.io/badge/Python-3.10-blue)  
 ![Build Status](https://img.shields.io/badge/Build-Passed-green)  
@@ -24,45 +23,21 @@ Webis is an intelligent web data extraction tool that uses AI technology to auto
 - **Conda** (recommended for environment management)  
 - **NVIDIA GPU** (optional, for CUDA support)  
 
-It is recommended to create an isolated Conda environment to avoid dependency conflicts:  
-
-```bash  
-# Create a new Conda environment named 'webis' with Python 3.10  
-conda create -n webis python=3.10 -y  
-
-# Activate the environment  
-conda activate webis  
-
-# Install PyTorch (for CUDA 12.1; adjust according to your CUDA version)  
-conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia  
-```
-
-> **Note**: Ensure the `webis` environment is activated for all subsequent steps. If CUDA errors occur, install the CPU version:  
->
-
-```bash
-conda install pytorch torchvision torchaudio cpuonly -c pytorch  
-```
-
 ### Installing Webis
-#### Method 1: Command Line Installation (Recommended)
+#### Method 1: Install via pip (Recommended)
 ```bash
-# Clone the repository  
-git clone https://github.com/TheBinKing/Webis.git  
-cd Webis  
+conda create -n webis python=3.10 -y
 
-# Install dependencies and set up  
-chmod +x install.sh  
-./install.sh  
+conda activate webis
+
+pip install webis-llm
 ```
-
-#### Method 2: Manual Installation
+#### Method 2: Install from Source
 ```bash
-# Clone the repository  
 git clone https://github.com/TheBinKing/Webis.git  
+
 cd Webis  
 
-# Install the package and dependencies  
 pip install -e .  
 
 # Add the bin directory to PATH  
@@ -187,16 +162,5 @@ $PROJECT_ROOT/bin/webis extract --help
     - `output_basic/` - CLI output results
 + `config/` - Configuration files
 
-## Troubleshooting
-+ **Invalid API Key**: Ensure `YOUR_API_KEY` is valid and the network is functioning.  
-+ **Server Failure**: Check if ports 8000/8002 are occupied (`netstat -tuln | grep 8000`) or adjust the ports.  
-+ **Conda Issues**: Accept channel ToS (`conda tos accept --channel CHANNEL`) or remove the channel (`conda config --remove channels CHANNEL`).
-
 ## Contributing
 Contributions are welcome! Please submit issues or pull requests on [GitHub](https://github.com/TheBinKing/Webis). For support, contact the maintainers or join the community discussion.  
-
-```plain
-
-I've fixed a few minor typos from the original translation (like "Conda" vs "Conda") and ensured consistent formatting. The content is now ready to use as an English README file.
-```
-

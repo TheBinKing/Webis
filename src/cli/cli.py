@@ -45,10 +45,15 @@ def cli_app():
 # 加载环境变量中的API密钥
 def load_env_api_key():
     """从.env文件或环境变量中加载DeepSeek API密钥"""
-    # 尝试加载.env文件（项目根目录）
-    dotenv_path = Path(__file__).resolve().parent.parent.parent / '.env'
-    if dotenv_path.exists():
-        load_dotenv(dotenv_path=dotenv_path)
+    # 尝试加载.env文件
+    # 首先尝试当前工作目录
+    if Path('.env').exists():
+        load_dotenv()
+    else:
+        # 然后尝试项目根目录
+        dotenv_path = Path(__file__).resolve().parent.parent.parent / '.env'
+        if dotenv_path.exists():
+            load_dotenv(dotenv_path=dotenv_path)
     
     # 尝试获取API密钥
     api_key = os.environ.get('DEEPSEEK_API_KEY')
@@ -82,12 +87,32 @@ def extract(input, output, tag_probs, api_key, use_deepseek, verbose):
     
     click.secho(f"找到 {len(html_files)} 个HTML文件", fg='green')
     
-    # 如果没有指定tag_probs，则使用默认值
+        # 如果没有指定tag_probs，则使用默认值
     if tag_probs is None:
-        tag_probs = (Path(__file__).resolve().parent.parent.parent / 'config' / 'tag_probs.json')
-        if verbose:
-            click.echo(f"使用默认标签概率文件: {tag_probs}")
-    
+        # 尝试多个位置查找配置文件
+        possible_paths = [
+            # 1. 当前工作目录下的 config 目录
+            Path.cwd() / 'config' / 'tag_probs.json',
+            # 2. 项目根目录（开发环境）
+            Path(__file__).resolve().parent.parent.parent / 'config' / 'tag_probs.json',
+            # 3. 包安装目录
+            Path(__file__).resolve().parent.parent / 'config' / 'tag_probs.json'
+        ]
+        
+        for path in possible_paths:
+            if path.exists():
+                tag_probs = path
+                if verbose:
+                    click.echo(f"使用配置文件: {tag_probs}")
+                break
+        else:
+            click.secho(f"错误: 未找到标签概率文件。请使用 --tag-probs 参数指定文件路径", fg='red')
+            if verbose:
+                click.echo("尝试过以下路径:")
+                for path in possible_paths:
+                    click.echo(f"- {path}")
+            return
+
     # 确保输出目录存在
     output_path.mkdir(parents=True, exist_ok=True)
     
@@ -168,7 +193,19 @@ def extract(input, output, tag_probs, api_key, use_deepseek, verbose):
 @cli_app.command('version')
 def version():
     """显示版本信息"""
-    click.echo("Webis内容提取工具 v1.0.0")
+    try:
+        import tomli
+        pyproject_path = Path(__file__).resolve().parent.parent.parent / 'pyproject.toml'
+        if pyproject_path.exists():
+            with open(pyproject_path, 'rb') as f:
+                pyproject = tomli.load(f)
+                version = pyproject.get('project', {}).get('version', '未知')
+        else:
+            version = '未知'
+    except Exception:
+        version = '未知'
+    
+    click.echo(f"Webis内容提取工具 v{version}")
     click.echo("© 2025 Webis团队")
 
 @cli_app.command('check-api')
@@ -208,93 +245,81 @@ def check_api(api_key):
 
 @cli_app.command('gui')
 def gui():
-    """启动Webis前端可视化界面 (Vue3)"""
+    """启动Webis可视化界面服务器"""
+    import http.server
+    import socketserver
+    import socket
+    from functools import partial
+
+    # 获取前端目录路径
+    # 首先尝试从项目目录寻找
     frontend_dir = Path(__file__).resolve().parent.parent.parent / 'frontend'
+    
+    # 如果项目目录不存在，则检查包安装路径
+    if not frontend_dir.exists():
+        import site
+        site_packages = site.getsitepackages()[0]
+        frontend_dir = Path(site_packages) / 'frontend'
 
     # 检查前端目录是否存在
     if not frontend_dir.exists():
         click.secho(f"错误: 前端目录不存在: {frontend_dir}", fg='red')
         return
 
-    # 检查package.json是否存在
-    package_json = frontend_dir / 'package.json'
-    if not package_json.exists():
-        click.secho(f"错误: package.json不存在: {package_json}", fg='red')
+    # 检查index.html是否存在
+    if not (frontend_dir / 'index.html').exists():
+        click.secho(f"错误: index.html不存在: {frontend_dir / 'index.html'}", fg='red')
         return
 
-    # 检查npm是否已安装
-    try:
-        subprocess.run(['npm', '--version'], capture_output=True, check=True)
-    except (subprocess.CalledProcessError, FileNotFoundError):
-        click.secho("错误: npm未安装，请先安装Node.js和npm", fg='red')
-        return
-
-    # 检查node_modules是否存在，如果不存在则安装依赖
-    node_modules = frontend_dir / 'node_modules'
-    if not node_modules.exists():
-        click.echo("正在安装前端依赖...")
+    # 设置端口（默认8080，如果被占用则尝试其他端口）
+    port = 8080
+    while port < 8100:  # 尝试20个端口
         try:
-            subprocess.run(['npm', 'install'], cwd=frontend_dir, check=True)
-            click.secho("✓ 依赖安装完成", fg='green')
-        except subprocess.CalledProcessError as e:
-            click.secho(f"错误: 依赖安装失败: {e}", fg='red')
-            return
+            # 创建自定义的请求处理器
+            class Handler(http.server.SimpleHTTPRequestHandler):
+                def __init__(self, *args, **kwargs):
+                    super().__init__(*args, directory=str(frontend_dir), **kwargs)
 
-    # 启动vite开发服务器
-    try:
-        # 优先尝试本地node_modules/.bin/vite
-        vite_path = frontend_dir / 'node_modules' / '.bin' / 'vite'
-        if vite_path.exists():
-            cmd = [str(vite_path)]
-        else:
-            cmd = ['npx', 'vite']
-        
-        # 检查端口是否被占用
-        import socket
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        port_in_use = False
-        try:
-            sock.bind(('localhost', 5173))
-            sock.close()
+                def end_headers(self):
+                    # 添加CORS头
+                    self.send_header('Access-Control-Allow-Origin', '*')
+                    super().end_headers()
+                
+                def log_message(self, format, *args):
+                    # 打印请求日志
+                    click.echo(f"[{self.log_date_time_string()}] {format%args}")
+                
+                def do_GET(self):
+                    # 如果请求根路径，确保返回 index.html
+                    if self.path == '/':
+                        self.path = '/index.html'
+                    elif not Path(frontend_dir / self.path.lstrip('/')).exists():
+                        # 如果文件不存在，返回 index.html（用于处理前端路由）
+                        self.path = '/index.html'
+                    return super().do_GET()
+
+            # 创建服务器
+            with socketserver.TCPServer(("", port), Handler) as httpd:
+                url = f'http://localhost:{port}/'
+                click.echo(f'启动服务器于: {url}')
+                click.echo('按 Ctrl+C 停止服务器')
+                
+                # 在浏览器中打开
+                webbrowser.open(url)
+                
+                # 启动服务器
+                try:
+                    httpd.serve_forever()
+                except KeyboardInterrupt:
+                    click.echo('\n正在关闭服务器...')
+                    httpd.shutdown()
+                    httpd.server_close()
+                    click.echo('服务器已关闭')
+            break
         except socket.error:
-            port_in_use = True
-            
-        if port_in_use:
-            click.secho("警告: 端口5173已被占用，请确保没有其他Vite服务正在运行", fg='yellow')
-            return
-
-        click.echo('正在启动前端开发服务器...')
-        server = subprocess.Popen(cmd, cwd=frontend_dir)
-        
-        # 等待服务器启动，最多等待10秒
-        max_attempts = 20
-        for i in range(max_attempts):
-            try:
-                sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                if sock.connect_ex(('localhost', 5173)) == 0:
-                    break
-                sock.close()
-                time.sleep(0.5)
-            except socket.error:
-                pass
-            
-        url = 'http://localhost:5173/'
-        click.echo(f'正在打开浏览器: {url}')
-        webbrowser.open(url)
-        
-        # 优雅地处理Ctrl+C
-        try:
-            server.wait()
-        except KeyboardInterrupt:
-            click.echo('\n正在关闭服务器...')
-            server.terminate()
-            server.wait()
-            click.echo('服务器已关闭')
-    except Exception as e:
-        click.secho(f'启动前端失败: {e}', fg='red')
-        if 'server' in locals():
-            server.terminate()
-            server.wait()
+            port += 1
+    else:
+        click.secho(f"错误: 无法找到可用端口（尝试了8080-8099）", fg='red')
 
 if __name__ == "__main__":
     cli_app()

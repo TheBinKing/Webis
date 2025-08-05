@@ -1,2 +1,0 @@
-[console_scripts]
-webis = src.cli.cli:cli_app

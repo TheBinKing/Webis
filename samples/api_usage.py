@@ -32,7 +32,9 @@ def main(use_deepseek=False, api_key=None):
         print("  Hint: Please ensure node_model_server.py is running")
         return
 
-    html_files_dir = Path(r"/data0/ziyan_full/llm_extra/webflow_github/Webis/samples/input_html")
+    # 获取脚本所在目录
+    script_dir = Path(__file__).resolve().parent
+    html_files_dir = script_dir / "input_html"
     if not html_files_dir.exists() or not any(html_files_dir.glob("*.html")):
         print(f"\n× No HTML test files found, please ensure {html_files_dir} contains HTML files")
         return
