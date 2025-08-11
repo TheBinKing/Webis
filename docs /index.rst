@@ -36,7 +36,7 @@ This project recommends using Conda for Python environment management and depend
 - vLLM (for efficient model inference)
 - FastAPI + Uvicorn (for API service)
 
-For quick environment setup, please refer to :doc:`quickstart` for detailed steps and dependency installation methods.
+For quick environment setup, please refer to :doc/user_guide:`quickstart` for detailed steps and dependency installation methods.
 
 
 Contents
@@ -46,12 +46,15 @@ Contents
    :maxdepth: 2
    :caption: User Guide
 
-   quickstart
-   api_usage
-   cli_usage
-   gui_usage
-   troubleshooting
-   config
+   user_guide/quickstart
+   user_guide/for_windows
+   user_guide/for_better_use/performance_optimization
+   user_guide/for_better_use/troubleshooting
+   usages/cli_usage
+   usages/gui_usage
+   usages/api_usage
+   config/config
+   reference/changelog
 
 Indices and tables
 ==================

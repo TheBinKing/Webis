@@ -19,20 +19,21 @@ Example code:
 
 ```python
 import requests
-# Send HTML file for synchronous processing
-files = {'file': open('input_html/sample.html', 'rb')}
-response = requests.post(
-    "http://localhost:8002/extract/process-html",
-    files=files,
-    data=data
-)
-task_id = response.json()['task_id']
 
-# Download processing results
-response = requests.get(f"http://localhost:8002/tasks/{task_id}/download", stream=True)
-with open(f"{task_id}_results.zip", 'wb') as f:
-    for chunk in response.iter_content(chunk_size=8192):
-        f.write(chunk)
+# Process HTML file synchronously
+with open('input_html/sample.html', 'rb') as file:
+    response = requests.post(
+        "http://localhost:8002/extract/process-html",
+        files={'file': file},
+        data={'extractor': 'trafilatura'}  # Example parameter
+    )
+
+# Save results
+task_id = response.json()['task_id']
+with requests.get(f"http://localhost:8002/tasks/{task_id}/download", stream=True) as r:
+    with open(f"{task_id}_results.zip", 'wb') as f:
+        for chunk in r.iter_content(chunk_size=8192):
+            f.write(chunk)
 ```
 ### 2. Asynchronous Processing Mode
 
@@ -49,37 +50,34 @@ Example code:
 import requests
 import time
 
-# Submit an asynchronous processing task
-files = {'file': open('input_html/sample.html', 'rb')}
-response = requests.post(
-    "http://localhost:8002/extract/process-async",
-    files=files,
-    data=data
-)
-async_task_id = response.json()['task_id']
+# Initiate async task
+with open('input_html/sample.html', 'rb') as file:
+    response = requests.post(
+        "http://localhost:8002/extract/process-async",
+        files={'file': file},
+        data={'enhance': 'true'}  # Example parameter
+    )
 
-# Monitor task status
-while True:
-    status = requests.get(f"http://localhost:8002/tasks/{async_task_id}").json()['status']
-    if status == 'completed':
-        break
+# Monitor progress
+async_task_id = response.json()['task_id']
+while requests.get(f"http://localhost:8002/tasks/{async_task_id}").json()['status'] != 'completed':
     time.sleep(5)
 
-# Download results after task completion
-download_response = requests.get(f"http://localhost:8002/tasks/{async_task_id}/download", stream=True)
-with open(f"{async_task_id}_async_results.zip", 'wb') as f:
-    for chunk in download_response.iter_content(chunk_size=8192):
-        f.write(chunk)
+# Retrieve results
+with requests.get(f"http://localhost:8002/tasks/{async_task_id}/download", stream=True) as r:
+    with open(f"{async_task_id}_async_results.zip", 'wb') as f:
+        for chunk in r.iter_content(chunk_size=8192):
+            f.write(chunk)
 ```
 ### Running the API Example
 ```bash
-# Basic execution method
+# Basic execution
 python api_usage.py
 
-# Enhance processing results using DeepSeek API (requires API key)
+# With DeepSeek enhancement
 python api_usage.py --use-deepseek --api-key YOUR_API_KEY_HERE
 
-# Specify extraction tool
+# Specify extractor
 python api_usage.py --extractor newspaper3k
 ```
 ## 二. Command Line Interface (CLI) Usage Examples
@@ -96,7 +94,7 @@ webis extract \
     --verbose
 ```
 
-### Other Commands
+### Utility Commands
 ```bash
 # View version information
 webis version

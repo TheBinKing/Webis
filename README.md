@@ -1,6 +1,6 @@
 # Webis - HTML Content Extraction Tool  
 ![Python Version](https://img.shields.io/badge/Python-3.10-blue)  
-![Build Status](https://img.shields.io/badge/Build-Passed-green)  
+![Bui1ld Status](https://img.shields.io/badge/Build-Passed-green)  
 
 Webis is an intelligent web data extraction tool that uses AI technology to automatically identify valuable information on web pages, filter out noise, and provide high-quality input for downstream AI training and knowledge base construction.  
 
