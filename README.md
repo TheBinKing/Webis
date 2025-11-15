@@ -118,10 +118,11 @@ if result['success']:
 
 ## 📖 详细文档
 
-- [文档处理说明](docs/Doc.md)
-- [PDF处理说明](docs/PDF.md) 
-- [图片OCR工具说明](docs/Pic.md)
-- [详细使用说明](docs/Introduction.md)
+- [文档处理说明 docs/Doc.md]
+- [PDF处理说明 docs/PDF.md] 
+- [图片OCR工具说明 docs/Pic.md]
+- [HTML处理说明 Webis_HTML/readme.md]
+- [详细使用说明 docs/Introduction.md]
 
 ## 🛠️ 开发
 
