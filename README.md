@@ -53,6 +53,10 @@ Webis/
 
 ## 🚀 快速开始
 
+### 前提条件
+- Python 3.9+
+- Conda环境 或 uv环境
+
 ### 1. 环境配置
 
 ```bash
@@ -62,8 +66,8 @@ bash setup/conda_setup.sh
 bash setup/uv_setup.sh
 
 # 或手动配置
-conda create -n webis_tools python=3.9 -y
-conda activate webis_tools
+conda create -n webis python=3.9 -y
+conda activate webis
 pip install -r setup/requirements.txt
 ```
 
@@ -71,7 +75,7 @@ pip install -r setup/requirements.txt
 
 ```bash
 # 激活环境
-conda activate webis_tools
+conda activate webis
 
 # 处理单个文件
 python tools/file_processor.py tools/data/pdf/example.pdf
