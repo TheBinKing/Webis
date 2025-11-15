@@ -1,0 +1,66 @@
+Sr. Systems/Software design/development Engineer
+HP
+Bellevue, Washington, United States
+Open Job Area Information Page	Show Map of Job Area	Print View	Save Job	E-mail Job
+This is not an entry-level position.
+
+Job ID:	7247673
+Position Title:	Sr. Systems/Software design/development Engineer
+Min Education:	H.S. Diploma/Equivalent
+Industry:	Other
+Posted:	October 1, 2010
+Job Function:	Information Technology
+Job Type:	Full-Time
+Salary:	Yearly Salary)
+Apply URL:	http://ars2.equest.com/?response_id=eb47ce75152824...
+ 
+HP is a leading global provider of products, technologies, solutions and services to consumers and business. The company's offerings span IT infrastructure, personal computing and access devices, global services, and imaging and printing. Our $4 billion annual R&D investment fuels the invention of products, solutions and new technologies so we can better serve customers and enter new markets. We invent, engineer and deliver technology solutions that drive business value, create social value and improve the lives of our customers. The Platform Virtualization team is an engineering team in the Infrastructure Software and Blades organization within the Enterprise Servers and Networking Business Unit. We are responsible for delivering products and solutions targeted at enabling virtualization on HP industry standard server platforms. We are looking for candidates who are interested in being part of an engineering team delivering infrastructure management for virtualized platforms. We expect our systems/software engineers to engage with HP partners, other HP teams and participate in the full software lifecycle from investigation, requirements, design, development, qualification and release.
+ 
+Job description The Sr. Systems/Software Engineer will be responsible for: - Designing and developing software products in a timely manner adhering to high quality standards
+- Working with Software Testing / QA organizations to achieve quality requirements
+- Troubleshooting / Debugging product issues - Collaborating with cross functional and remote project team members for successful project completion
+- Working with external partners as needed
+ 
+Applies developed subject matter knowledge to solve common and complex business issues within established guidelines and recommends appropriate alternatives.  Works on problems/projects of diverse complexity and scope.  Exercises independent judgment within generally defined policies and practices to identify and select a solution.  May act as a team or project leader providing direction to team activities and facilitates information validation and team decision-making process.  Ability to handle most unique situations.  May seek advice in order to make decisions on complex business issues.
+Education
+
+Bachelor's (undergraduate) or Master's (graduate) in Computer Science/Engineering or equivalent.
+
+ 
+
+Experience and knowledge
+
+Bachelor's or Master's degree in computer Science/Engineering or equivalent experience and a minimum of 8 plus years related experience.
+Demonstrated success developing a customer facing software product with experience of the complete software lifecycle.
+Experience with industry standard x86-based virtualization
+Experience with virtualization management product development
+Experience with x86 based in-band and out-of-band server management product
+Experience debugging / troubleshooting large, complex and interdependent software
+Experience with Microsoft software development tools and
+Core skills
+
+ 
+
+Object oriented design, implementation and test
+Strong software development and debugging
+Ability to collaborate and work in a team environment
+Ability to coordinate and collaborate with multiple HP internal teams and with external partners for timely completion of
+Analytical skills to research technical issues, troubleshoot complex systems and to deliver right
+Ability to multitask on a variety of software development lifecycle activities
+Strong English verbal and written communication skills
+ 
+
+Technology Specialties
+
+x86-based industry standard server architecture and platform management
+Strong knowledge of object oriented design, data modeling and common design patterns
+Strong distributed design and implementation
+Knowledge of Windows Server Operating Systems, Windows Internals and a working knowledge of the NT Kernel device
+C# or C/C++ programming skills
+Experience with XML general schema
+Experience with Microsoft script technologies, including
+Industry experience with Microsoft development technologies, including .NET 3.5 (WCF, LINQ, WPF) and
+General knowledge of virtualization concepts (highly desirable, but not required
+Working knowledge of Microsoft System Center products (SCOM, SCCM, SCVMM) (highly desirable, but not required
+Knowledge of systems management using WBEM and SNMP (desirable, but not required)
+Knowledge of RESTful web services (desirable, but not required)

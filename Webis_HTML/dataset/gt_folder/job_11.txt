@@ -1,0 +1,57 @@
+Sr SW Engineer (Sr Embedded SW/Test Engineer)
+ENSCO, Inc.
+Grand Rapids, Michigan, United States
+Open Job Area Information Page	Show Map of Job Area	Print View	Save Job	E-mail Job
+This is not an entry-level position.
+
+Job ID:	7421419
+Position Title:	Sr SW Engineer (Sr Embedded SW/Test Engineer)
+Posted:	June 25, 2010
+Job Type:	Full-Time
+Contact Person:	Kenneth Zunic
+Apply URL:	http://www.ensco.com/careers/currentcareeropportun...
+Job Description: This position is contingent upon contract award.
+ENSCO, Inc. is searching for a qualified Senior Embedded Software/Test Engineer in our Grand Rapids, MI location. The successful candidate will utilize their experience and expertise to work on a multidisciplinary team designing, developing, and updating Flight Management System products. Responsibilities will include:
+- Validate given system requirements and write software requirements for most flight management functional areas (Navigation, I/O, Displays, Datalink, Flight Planning, Guidance, Performance, etc.)
+- Working in a multidisciplinary team, architect, design, develop, and update complex flight management functions within real-time embedded flight management (FM) software across all FM functional areas, with an emphasis on Navigation and Sensor Management including the following major sub-areas:
+- Inertial systems
+- GPS systems
+- TACAN/DME/VOR/ILS navigation radios
+- Identify, evaluate, and occasionally develop engineering tools and processes necessary to meet the project’s engineering and business goals
+- Provide timely communications on significant issues or developments
+- Conduct Problem Report (PR) investigation and resolution, including complex PRs
+- Participate in structural coverage analysis and resolution
+- Participate in software design and code reviews
+- Write FMS software functional test cases and procedures to verify software functional requirements
+- Develop software verification strategies, and test procedures to verify software functional requirements
+
+Security Clearance Required: NO
+
+Qualification Desired: - Lean Six Sigma or other Quality related training/experience
+- Knowledge of Windchill/PDM for configuration control
+- Knowledge of data structures, algorithms, and software engineering principles
+- PC proficiency
+- Knowledge of DOORS, Dimensions, and Rational Apex
+- Understanding of the principles of aircraft navigation
+- MS1553 and A429 communications protocols
+- Experience with analysis of real-time aspects of hardware and software issues
+- Matlab or other analysis tools
+- Knowledge of RTCA/DO-178B standards and FAA certification
+
+Division Description: ENSCO’s Avionics Solutions Group provides safety and mission critical systems, software and hardware engineering solutions to the aerospace industry through specific focus on DO-178B, DO-254, DO-160E, SEAL and military standards.
+
+ENSCO has been delivering avionics solutions since 1983. Our corporation has more than 25 years of avionics systems and software engineering experience and supports all stages of the system development lifecycle including requirements definition and analysis, software and hardware design, development and test, verification, and formal certification.
+Our process-driven approach and domain expertise offers our customers the confidence they are looking for in an avionics development partner when deploying today’s high-reliability, safety-critical airborne systems.
+Job Requirements
+- Bachelor's degree in mathematics/ computer science/ computer engineering/ aeronautical engineering (or degree with heavy emphasis in software engineering and mathematics) or equivalent
+- 5 years of closely related experience to include a minimum of 2 years programming in C, C++, ADA 83 or ADA 95; and, 3 years of software engineering experience with emphasis on large scale avionics software development (at least 2 years with Flight Management Systems software)
+- High degree of Avionics product development experience
+- Strong customer mind-set
+- Experience in military and/or civil aircraft Flight Management (FM) software
+- Self motivated, driven, focused and results oriented
+- Excellent interpersonal, written, and verbal skills with demonstrated customer relationship skills
+- Demonstrated ability to multi-task and respond to quick turn-around requests
+
+This position requires access to controlled technology. To abide by Export Compliance regulations candidates must have either U.S. Citizenship or U.S. Permanent Resident Alien Status.
+
+Any offer of employment is conditional upon the successful completion of a background investigation and drug screen.

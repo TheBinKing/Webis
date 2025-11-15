@@ -1,0 +1,22 @@
+# 统一文件处理器依赖包
+
+# 基础依赖
+pathlib
+
+# 文档处理 (DocumentProcessor)
+langchain-community>=0.0.10
+docx2txt>=0.8
+
+# PDF处理 (PDFProcessor) 
+pypdf>=3.0.0
+
+# 图片OCR处理 (ImageProcessor)
+easyocr>=1.7.0
+torch>=1.9.0
+torchvision>=0.10.0
+
+# 可选：其他OCR选择（注释掉，按需取消注释）
+# paddleocr>=2.7.0
+# paddlepaddle>=2.5.0
+# pytesseract>=0.3.10
+# Pillow>=8.0.0

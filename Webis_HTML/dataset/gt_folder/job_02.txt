@@ -1,0 +1,73 @@
+Job Overview 
+
+Company:	CareerPlanners, Inc
+Base Pay:	$70,000 - $100,000 /Year
+Other Pay:	
+Employee Type:	Full-Time
+Industry:	Securities
+Manages Others:	Engineering
+Information Technology
+Professional Services No
+Job Type:	 
+Required Education:	4 Year Degree
+Required Experience:	At least 4 year(s)
+Required Travel:	Negligible
+Relocation Covered:	Not Specified
+Reference ID:	Not Available
+Location:	map it!US-FL-Miami
+
+Loading Map...
+ 	 
+Contact:	Bob Kelly
+Phone:	(561) 745-6945
+Email:	Send Email Now
+Fax:	Not Available
+Company Overview 
+
+CareerPlanners, Inc. provides information technology recruiting services to businesses and the Public Sector throughout the United States. CareerPlanners is a veteran-owned business that is totally committed to serving the IC (Intelligence Community). As innovators with a command of business and technical knowledge, CareerPlanners can help their clients identify hard-to-find candidates faster. Our technology expertise include: Application/Solution Development, SOA (Service Oriented Architecture), IT Portfolio Management/PMO, Middleware, Sales and Sales Support, Operations, and eBusiness/Internet Solutions.
+
+Learn More about CareerPlanners, Inc
+Visit Our Website
+
+Senior Java Engineer
+   Apply Now
+Report It
+Job Description 
+
+ 
+
+Primary responsibilities include:
+
+Responsible for part of the development of a software securities trading system.
+Participate in the requirements analysis, conceptual design, detailed design, and implementation of a system.
+Participate in integration testing of programs within a system.
+Generate formal design documentation.
+Support the development of Acceptance Test Plan and Procedures documents.
+
+Technical Requirements:
+
+ 
+
+Java and J2EE experience
+
+The FIX protocol, and/or other aspects of the brokerage industry is a plus.
+
+Design and development of applications using a development platform such as Streambase, etc
+
+Experience using Java application servers such as BEA's WebLogic
+
+Experience with Web Services concepts and implementation
+
+ 
+
+
+Job Requirements 
+
+The primary focus of this Senior Java Engineer is to develop software application solutions that integrate securities trading systems, decision support, collaboration, as well as other core capabilities.  They rely heavily on internal expertise in the key areas of the financial industry.
+
+The hiring company possesses world class technical talent and industry expertise in system concept development, rapid prototyping, software engineering, systems integration, and project leadership.  They pride themselves on their proven ability to apply their small, elite technical team focused on the end user solving problems quickly and effectively.
+ 
+ 
+
+ 	   Apply Now
+Report It

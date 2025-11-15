@@ -1,0 +1,50 @@
+063289
+Position ID:
+10328807
+Dice ID:
+none
+Travel Required:
+yes
+Telecommute:
+Confidential Company
+Company:
+Title:
+IBM, Windows, Storage, pre sales, post sales, x86, SystemX
+Skills:
+11-23-2010
+Date:
+Location:
+415
+Area Code:
+FULLTIME
+Employ. Type:
+$100k to $150k
+Pay Rate:
+Job Length:
+Job Overview
+Contact Information
+The System Engineer/Architect will provide expertise in enterprise solution design and assume responsibility for expertise in his/her area as to best practices and industry trends that will serve our clients.  Additional responsibilities include:
+Experience working within a professional services field, or consulting experience, system engineer experience and/or deploying enterprise software solutions preferred.
+Experience with IBM hardware is of high value.
+Experience with x86 Architecture
+Comfort and skills in presenting to a technical audience.
+6-10 years experience in a similar role working with clients and sales support.  Specific skills with design, setup, installation and troubleshooting for the following technologies:
+Intel/AMD Server architecture and solution design (x86 Architecture a must)
+Server Virtualization * VMWare, Xen, etc. (setup, installation, troubleshooting)
+Microsoft OS and applications
+Linux
+Storage architecture and solution design (SAN, iSCSI, etc)
+Sr Systems Engineer/ Solution Architect
+Systems Engineer-Windows, Storage & Virtualization a plus
+San Francisco, CA
+Job Description
+Company Overview
+Save this job
+Email to a friend
+Positive
+Negative
+Misrepresented job
+Pays below market level
+Not a real job
+Position no longer available
+Other

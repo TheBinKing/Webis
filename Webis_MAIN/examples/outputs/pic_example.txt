@@ -1,0 +1,24 @@
+=== 文件处理结果 ===
+输入文件: /home/ubuntu/Webis/examples/pic_example.jpg
+文件类型: image
+处理器: ImageProcessor
+处理时间: 2025-11-09T13:19:49.842033
+文本长度: 209 字符
+
+=== 抽取内容 ===
+
+16. Allow me。 让我来。
+18. Cheer up! 振作起来!
+20. Have fun! 玩得开心!
+21. How much? 多少钱?
+22.1'm full。 我饱了。
+23.1'm home
+我回来了。
+24.1'm lost。 我迷路了。
+25. My treat。 我请客。
+26. So do |. 我也一样。
+27. This Way。
+这边请。
+29. Bless
+祝福你!
+you!

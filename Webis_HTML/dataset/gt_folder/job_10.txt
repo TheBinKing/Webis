@@ -1,0 +1,44 @@
+Job ID:	7421424
+Position Title:	Software Engineer (Embedded Controls Software Engineer)
+Posted:	September 20, 2010
+Job Type:	Full-Time
+Contact Person:	Kenneth Zunic
+Apply URL:	http://www.ensco.com/careers/currentcareeropportun...
+Job Description: This position is contingent upon contract award.
+ENSCO, Inc. has a requirement for a Software Engineer to support system requirements development, verification and validation on safety-critical control systems.
+
+Initial Tasks:
+- Assist Customer Control Systems Engineers in the decomposition of engine-level performance and aircraft interface requirements into system level requirements which can be allocated to software.
+- Assist Control Systems Engineers in developing the traceability from the software high-level requirements to the system requirements, including identification and justification of derived requirements.
+- Develop Software Design Document (SDD) detailed functional descriptions from Simulink/StateFlow diagrams (low-level requirements and architecture).
+- Develop traceability from the SDD diagrams to the Software Requirements Documents (SRD) high-level software requirements they implement, and develop additional/remove unnecessary or inaccurate high-level software requirements in the SRD as needed.
+
+Future Tasks:
+- Support system integration and verification activities - test case design, test procedure development and debug, formal test and execution.
+- System and Software requirements development from higher level functional specifications.
+- Software design activities using Matlab/Simulingk/Stateflow or SCADE design tools.
+
+Security Clearance Required: NO
+
+Qualification Desired: - Experience with DO-178B Level A or SEAL Level 1 standards.
+- Experience with aircraft engine controls, control law design and/or redundancy management.
+- Hands-on experience with SCADE.
+
+Division Description: ENSCO’s Avionics Solutions Group provides safety and mission critical systems, software and hardware engineering solutions to the aerospace industry through specific focus on DO-178B, DO-254, DO-160E, SEAL and military standards.
+
+ENSCO has been delivering avionics solutions since 1983. Our corporation has more than 25 years of avionics systems and software engineering experience and supports all stages of the system development lifecycle including requirements definition and analysis, software and hardware design, development and test, verification, and formal certification.
+Our process-driven approach and domain expertise offers our customers the confidence they are looking for in an avionics development partner when deploying today’s high-reliability, safety-critical airborne systems.
+Job Requirements
+- BS degree in Electrical or Systems Engineering or equivalent.
+- Minimum 3 years of relevant experience with design of control law algorithms in commercial or military engine controls or flight controls development projects under DO-178B or SEAL safety assurance levels.
+- Minimum 1 year of industry experience in developing and supporting embedded systems.
+- Experience with the following methods and tools: systems modeling (i.e. Matlab, Simulink, Stateflow, SCADE), requirements management (i.e. DOORs), and configuration change control.
+- Strong verbal and written communication skills are required and the candidate must be a self-starter and work well in a team environment that is process oriented.
+- Experience in commercial or military engine or flight control aerospace/avionics applications, preferably, control laws design and/or redundancy management.
+- Understanding of the technical relationship between system level requirements and software high level requirements.
+- Experience with real-time C/C++ and embedded operating systems.
+- Experience with avionics communication protocols - Arinc, 1553, CANbus.
+- Ability to isolate and debug embedded hardware and software problems.
+- Experience developing and verifying software to DO-178B or SEAL standards.
+- Ability to multi-task and respond to quick turn-around requests - strong organizational skills.
+- U.S. Citizenship.

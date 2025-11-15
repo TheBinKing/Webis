@@ -1,0 +1,11 @@
+{
+  "total_files": 4,
+  "successful": 4,
+  "failed": 0,
+  "output_files": [
+    "/home/ubuntu/Webis/examples/outputs/doc_example.txt",
+    "/home/ubuntu/Webis/examples/outputs/pdf_example.txt",
+    "/home/ubuntu/Webis/examples/outputs/pic_example.txt",
+    "/home/ubuntu/Webis/examples/outputs/html_example.txt"
+  ]
+}

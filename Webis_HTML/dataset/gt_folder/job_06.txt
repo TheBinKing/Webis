@@ -1,0 +1,51 @@
+Quant Developer
+| More
+Company: Capital Markets 
+Location: New York, New York
+Salary: $150,000   -   $150,000
+Category: Information Tech / Computer
+Date Posted: 10/13/2010
+Travel Required: Not Specified
+Security Clearance: No
+Work Type: Any
+Job Description
+The Quantitative Strategies team is a quantitative Portfolio Management Desk. The Desk manages one of the largest hedge funds in the world using sophisticated quantitative models. It trades across assets classes on a global basis using a wide variety of instruments (cash securities, futures, forwards, options, interest rate swaps and other OTC derivatives).
+
+The QS Technology team works closely with the business providing a wide range of services. The technology group is expanding and require a programmer analyst with a quantitative background (typically a science orientated education), strong technology skills and a keen interest in supporting a fast moving, demanding and stimulating business. Technology supports the full breadth of the platform which the business uses. It spans a production statistical portfolio construction system, through to generating and executing orders in derivative instruments.
+
+The rewards of this role include working with a first class team, learning the quantitative technology platform and working with the investment management process from construction to execution.
+
+Principal Responsibilities:
+
+          Work as part of the Research Technology team, reporting to the teams manager.
+
+          Play a high profile role working side by side with the Portfolio Management team on research and production efforts.
+
+          Specialize in the the core research and portfolio construction system Plutus.
+
+          Implement technology solutions for complex business problems. The problems could be mathematical in nature requiring a basic understanding of linear algebra, probability and statistics.
+
+          Progress the technology to give horizontal scalability and Matlab integration
+
+          Work across multiple software components and technologies, including C++, Sybase, VB and Java.
+
+Core Skills
+
+          At least two years of experience in a technology role
+
+          C++ and database (ideally Sybase). Core skills sets will be vetted.
+
+          Interfacing to data vendors, gathering and validating market data real time of interest but not essential.
+
+          Exposure to and appreciation of Futures, Forward, IR Swap, Option or CDS contracts.
+
+          Cooperate within a team and work in a rigorous and stimulating environment
+
+          Ability to gather requirements and distill business analysis
+
+          Strong commitment toward best practices within enterprise development and deployment
+
+          Ability to prototype and develop efficiently, test new software
+
+
+Click here to apply now

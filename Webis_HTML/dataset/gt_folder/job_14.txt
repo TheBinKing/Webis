@@ -1,0 +1,110 @@
+
+Job Overview
+
+Company:
+    Livescribe Inc.
+
+Title:
+    Application Support QA Lead
+
+Skills:
+    write, read and debug Java, API testing, White Box, Eclipse IDE, JDK, Mac and Windows experience, QA Lead experience.Actionscript is a plus, start up experience is a must
+
+Date:
+    11-26-2010
+
+Location:
+    Oakland, CA
+
+Area Code:
+    510
+
+Employ. Type:
+    FULLTIME
+
+Pay Rate:
+    90- 110 +/-
+
+Job Length:
+
+Position ID:
+    0058
+
+Dice ID:
+    RTX14962d
+
+Travel Required:
+    none
+
+Telecommute:
+    no
+
+Contact Information
+
+Contact:
+    Debbie Rosen
+
+Address:
+    7677 Oakport Street
+
+ 
+    12th Floor
+
+ 
+    Oakland, CA 94621
+
+Phone:
+    (510) 553-4938
+
+Fax:
+    (510) 777-0159
+
+http://www.livescribe.com
+
+    Save this job
+    Email to a friend
+Click Here to Apply
+
+Printer-Friendly
+Job Description
+
+    Application Support QA Lead
+    Oakland, CA
+
+Application Support QA LEAD
+Oakland, CA
+
+The Application Support QA Lead will be responsible for leading the effort of ensuring varying levels of qualification for a variety of Pen & Desktop applications that run on the Windows & Mac OS. These applications will include 1st/2nd/3rd Party Pen Applications sold on our Livescribe App Store, Platform and Desktop SDK tools provided to our Developer Community as well as Desktop Tools and Utilities developed by our internal Engineering team.
+
+Role and Responsibilities will include the following:
+* Participation in the schedule, iteration and release planning which includes resource allocation, test planning, QA task assignments, defect management and test status reporting.
+* This position will be expected to interface with software engineering and product marketing to ensure valid, agreed upon acceptance criteria for each item committed to an iteration: this includes but not limited to basic functional criteria, but would also include those tasks that will integrate functionality across the system for release into production.
+* Responsible for providing leadership to junior QA personnel both onsite & offshore by providing industry standard test methodologies that will help navigate the software development lifecycle for a given iteration or software release.
+* The lead will be expected to validate test suites are appropriate for all levels of testing: acceptance, regression, integration and automation.
+* Maintain and improve test plan and test framework.
+* Participate in defect reviews with cross-functional and cross-program teams for planning, providing test status and updates for the defects associated with the product.
+* Work closely with the customer support organization in analyzing and reproducing customer reported problems.
+* Simulate Developer user experience while validating the Java API for developing Smartpen applications on the Platform SDK.
+* Simulate Developer user experience creating desktop applications that access the Smartpen applications.
+* Verify and test SDK plug-ins and various support tools created by the developers.
+* Work closely with SDK and Pen Software developers to develop innovative testing solutions that meet requirements with respect to functionality, performance, scalability, reliability, realistic implementation schedules and adherence to testing goals and principles.
+
+QUALIFICATIONS AND EDUCATION REQUIREMENTS-
+
+* Bachelor*s degree in a technical discipline, or equivalent work experience.
+* Experience managing QA projects and leading a small team of testers.
+* Must have excellent analytical, debugging and problem solving skills.
+* Good written and verbal communication skills.
+* Experience writing and developing clear test plans
+* Ability to work independently is self-motivated and process oriented.
+
+SKILL AND TECHNICAL REQUIREMENTS-
+
+* At least 1-3 years writing/reading/debugging Java and API level testing.
+* At least 3 or more years of White Box testing experience.
+* Experience with Eclipse IDE and Java SE Development Kit (JDK).
+* Working experience on Mac & Windows OS.
+* Working experience on testing wireless devices a plus.
+* Willingness to learn other programming languages primarily C++ and C#.
+Company Overview
+find more jobs with this company
