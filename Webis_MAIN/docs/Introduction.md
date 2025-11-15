@@ -2,7 +2,7 @@
 
 ## 概述
 
-本项目提供了一个统一的文件处理接口，可以自动识别文件类型并使用相应的工具提取文本内容。支持三种主要模态：
+本项目构建了一个多模态数据处理工具，可以自动识别文件类型并使用相应的工具提取文本内容，并提供结构化输出。当前已集成四种模态数据提取工具，其中网页提取工具Webis_HTML为我们单独设计：
 
 - **文档处理**: `.docx`, `.txt`, `.md` 文件 (使用 LangChain)
 - **PDF处理**: `.pdf` HTML文件 (使用 PyPDF)  
@@ -52,8 +52,7 @@ pip3 --version
 #### 快速安装 (推荐)
 
 ```bash
-cd /Users/easonnoway/Desktop/Webis_Tools
-pip3 install -r requirements.txt
+pip install -r setup/requirements.txt
 ```
 
 #### 手动安装

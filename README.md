@@ -1,7 +1,8 @@
 # Webis - 多模态数据清洗工具
 ![Python Version](https://img.shields.io/badge/Python-3.9-blue)  
 ![Build Status](https://img.shields.io/badge/Build-Passed-green)  
-Webis是一个一个支持文档、PDF、图片、HTML网页等多模态数据的统一文件处理系统，可以自动识别文件类型并快速调用不同类型工具，批量清洗各类文件数据并提供结构化输出。同时，我们为Webis单独开发了一款高效的智能网页数据提取工具--Webis_HTML，使用 AI 技术自动识别网页上的有价值信息，过滤噪音，欢迎大家使用。
+
+Webis是一个支持**文档、PDF、图片、HTML网页**等多模态数据的清洗工具，可以自动识别文件类型并快速调用不同类型工具，批量清洗各类文件并提供结构化输出。当前Webis已集成四种模态数据处理工具，其中Webis_HTML为我们独立开发的网页数据提取工具，使用 AI 技术自动识别网页上的有价值信息，过滤噪音。我们已将Webis_HTML作为一个独立子模块同步上传至Webis项目仓库
 ## 🏗️ 项目结构
 
 ```
@@ -73,7 +74,7 @@ pip install -r setup/requirements.txt
 conda activate webis_tools
 
 # 处理单个文件
-python tools/file_processor.py tools/data/pdf/示例.pdf
+python tools/file_processor.py tools/data/pdf/example.pdf
 
 # 运行完整演示
 python examples/run_demo.py
